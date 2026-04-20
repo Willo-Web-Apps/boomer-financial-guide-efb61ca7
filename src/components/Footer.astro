@@ -1,11 +1,58 @@
 ---
 const year = new Date().getFullYear();
 ---
-<footer class="border-t border-surface-200 py-10 mt-auto">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-      <p class="text-sm font-semibold text-surface-900 font-display">Your New Business</p>
-      <p class="text-sm text-surface-800/50">&copy; {year} Your New Business. All rights reserved.</p>
+<footer style="background: oklch(0.24 0.022 78); border-top: 1px solid oklch(0.58 0.090 155 / 0.25);">
+  <div class="max-w-5xl mx-auto px-6 py-14">
+
+    <!-- Top row: brand + nav -->
+    <div class="grid sm:grid-cols-[1fr_auto_auto] gap-10 sm:gap-16 items-start pb-10" style="border-bottom: 1px solid oklch(1 0 0 / 0.10);">
+
+      <!-- Brand column -->
+      <div>
+        <a href="/" class="flex items-center gap-2.5 mb-4" style="text-decoration: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" aria-hidden="true">
+            <path d="M6 26 C6 26, 10 8, 26 6 C26 6, 22 24, 6 26Z" fill="oklch(0.58 0.090 155)" opacity="0.9"/>
+            <path d="M6 26 L18 14" stroke="oklch(0.68 0.145 55)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+          <span class="font-display font-semibold" style="font-size: 1.1rem; color: oklch(0.93 0.012 78); letter-spacing: -0.01em;">Clearway</span>
+        </a>
+        <p class="font-body text-sm leading-relaxed max-w-xs" style="color: oklch(0.65 0.018 78);">
+          Retirement finance, finally in plain English. For baby boomers who've earned the right to a confident retirement.
+        </p>
+      </div>
+
+      <!-- Topics column -->
+      <div>
+        <p class="font-display text-xs tracking-[0.14em] uppercase mb-4" style="color: oklch(0.68 0.145 55);">Topics</p>
+        <ul class="space-y-2">
+          <li><a href="#topics" class="font-body text-sm transition-colors duration-150" style="color: oklch(0.65 0.018 78);" onmouseover="this.style.color='oklch(0.90 0.012 78)'" onmouseout="this.style.color='oklch(0.65 0.018 78)'">Social Security</a></li>
+          <li><a href="#topics" class="font-body text-sm transition-colors duration-150" style="color: oklch(0.65 0.018 78);" onmouseover="this.style.color='oklch(0.90 0.012 78)'" onmouseout="this.style.color='oklch(0.65 0.018 78)'">Medicare</a></li>
+          <li><a href="#topics" class="font-body text-sm transition-colors duration-150" style="color: oklch(0.65 0.018 78);" onmouseover="this.style.color='oklch(0.90 0.012 78)'" onmouseout="this.style.color='oklch(0.65 0.018 78)'">Withdrawal Strategy</a></li>
+          <li><a href="#topics" class="font-body text-sm transition-colors duration-150" style="color: oklch(0.65 0.018 78);" onmouseover="this.style.color='oklch(0.90 0.012 78)'" onmouseout="this.style.color='oklch(0.65 0.018 78)'">RMDs</a></li>
+          <li><a href="#topics" class="font-body text-sm transition-colors duration-150" style="color: oklch(0.65 0.018 78);" onmouseover="this.style.color='oklch(0.90 0.012 78)'" onmouseout="this.style.color='oklch(0.65 0.018 78)'">Tax Planning</a></li>
+          <li><a href="#topics" class="font-body text-sm transition-colors duration-150" style="color: oklch(0.65 0.018 78);" onmouseover="this.style.color='oklch(0.90 0.012 78)'" onmouseout="this.style.color='oklch(0.65 0.018 78)'">Estate Basics</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources column -->
+      <div>
+        <p class="font-display text-xs tracking-[0.14em] uppercase mb-4" style="color: oklch(0.68 0.145 55);">Resources</p>
+        <ul class="space-y-2">
+          <li><a href="/blog" class="font-body text-sm transition-colors duration-150" style="color: oklch(0.65 0.018 78);" onmouseover="this.style.color='oklch(0.90 0.012 78)'" onmouseout="this.style.color='oklch(0.65 0.018 78)'">All Articles</a></li>
+          <li><a href="#newsletter" class="font-body text-sm transition-colors duration-150" style="color: oklch(0.65 0.018 78);" onmouseover="this.style.color='oklch(0.90 0.012 78)'" onmouseout="this.style.color='oklch(0.65 0.018 78)'">Newsletter</a></li>
+        </ul>
+      </div>
     </div>
+
+    <!-- Bottom row -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-8">
+      <p class="font-body text-xs" style="color: oklch(0.45 0.015 78);">
+        &copy; {year} Clearway. All rights reserved.
+      </p>
+      <p class="font-body text-xs italic" style="color: oklch(0.40 0.015 78);">
+        For informational purposes only. Not financial advice.
+      </p>
+    </div>
+
   </div>
 </footer>

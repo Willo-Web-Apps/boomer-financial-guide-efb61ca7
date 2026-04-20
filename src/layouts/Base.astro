@@ -8,7 +8,10 @@ interface Props {
   description?: string;
 }
 
-const { title = "Your New Business", description = "finance resource for baby boomers" } = Astro.props;
+const {
+  title = "Clearway — Retirement Finance in Plain English",
+  description = "Clearway is the trusted retirement finance guide for baby boomers. Plain-English answers on Social Security, Medicare, RMDs, and withdrawal strategies — no jargon, no sales pitch."
+} = Astro.props;
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -18,18 +21,24 @@ const { title = "Your New Business", description = "finance resource for baby bo
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#2C5F4A" />
     <title>{title}</title>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Your New Business",
-      "description": "finance resource for baby boomers",
-      "url": "https://boomer-financial-guide.onrender.com"
+      "name": "Clearway",
+      "description": "Retirement finance, finally in plain English — Social Security, Medicare, RMDs, and withdrawal strategies for baby boomers.",
+      "url": "https://clearway.onrender.com",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Baby boomers, ages 60–72, planning or entering retirement"
+      }
     }
     </script>
   </head>
-  <body class="min-h-screen flex flex-col bg-surface-50 text-surface-900 font-body antialiased">
+  <body class="min-h-screen flex flex-col font-body antialiased" style="background: oklch(0.970 0.012 78); color: oklch(0.28 0.020 80);">
     <Header />
     <main class="flex-1">
       <slot />

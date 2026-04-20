@@ -1,57 +1,123 @@
+/* Clearway — Elegant Serif, Warm Luxurious */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
 @import "tailwindcss";
 
 /* -----------------------------------------------------------------------
-   Design Tokens — customize these to change the entire site's look.
-   The Product Agent should edit this @theme block to match the business:
-   - Swap fonts (Google Fonts @import above, font families below)
-   - Change brand colors to match the business personality
-   - Flip surface colors for dark theme (swap light/dark values)
+   Design Tokens — Clearway
+   Warm sage green + amber/copper + cream/linen editorial palette
    ----------------------------------------------------------------------- */
 
 @theme {
-  /* Typography — replace with distinctive Google Fonts for the business */
-  --font-display: ui-sans-serif, system-ui, sans-serif;
-  --font-body: ui-sans-serif, system-ui, sans-serif;
+  /* Typography */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Lora', Georgia, serif;
 
-  /* Brand color scale — agent should customize per business */
-  --color-brand-50: oklch(0.97 0.01 250);
-  --color-brand-100: oklch(0.93 0.02 250);
-  --color-brand-200: oklch(0.87 0.04 250);
-  --color-brand-400: oklch(0.70 0.12 250);
-  --color-brand-500: oklch(0.60 0.16 250);
-  --color-brand-600: oklch(0.50 0.16 250);
+  /* Brand — deep sage green */
+  --color-brand-50:  oklch(0.97 0.018 155);
+  --color-brand-100: oklch(0.93 0.030 155);
+  --color-brand-200: oklch(0.85 0.050 155);
+  --color-brand-400: oklch(0.58 0.090 155);
+  --color-brand-500: oklch(0.46 0.095 155);
+  --color-brand-600: oklch(0.36 0.085 155);
 
-  /* Surface colors — light theme defaults. Flip for dark theme:
-     surface-50 becomes near-black, surface-900 becomes near-white */
-  --color-surface-50: oklch(0.985 0.002 250);
-  --color-surface-100: oklch(0.96 0.004 250);
-  --color-surface-200: oklch(0.92 0.006 250);
-  --color-surface-800: oklch(0.30 0.015 250);
-  --color-surface-900: oklch(0.20 0.015 250);
-  --color-surface-950: oklch(0.14 0.012 250);
+  /* Accent — warm amber/copper */
+  --color-accent-100: oklch(0.96 0.040 60);
+  --color-accent-400: oklch(0.78 0.130 55);
+  --color-accent-500: oklch(0.68 0.145 55);
+  --color-accent-600: oklch(0.58 0.135 55);
+
+  /* Surface — warm cream/linen palette */
+  --color-surface-50:  oklch(0.985 0.008 80);
+  --color-surface-100: oklch(0.970 0.012 78);
+  --color-surface-200: oklch(0.940 0.018 76);
+  --color-surface-300: oklch(0.890 0.020 74);
+  --color-surface-800: oklch(0.32  0.022 75);
+  --color-surface-900: oklch(0.24  0.022 78);
+  --color-surface-950: oklch(0.16  0.018 80);
 }
 
-/* Page-load animations — CSS only, no JS required */
+/* Body baseline */
+body {
+  background-color: oklch(0.970 0.012 78); /* warm linen */
+  color: oklch(0.28 0.020 80);             /* rich warm dark brown */
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+/* Page-load animations */
 @keyframes fadeIn {
   from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out both;
+@keyframes fadeInSlow {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-.animate-slide-up {
-  animation: slideUp 0.6s ease-out both;
+.animate-fade-in      { animation: fadeIn     0.7s ease-out both; }
+.animate-fade-in-slow { animation: fadeInSlow 1.2s ease-out both; }
+.animate-slide-up     { animation: slideUp    0.7s ease-out both; }
+
+.delay-100  { animation-delay: 0.10s; }
+.delay-200  { animation-delay: 0.20s; }
+.delay-300  { animation-delay: 0.32s; }
+.delay-400  { animation-delay: 0.44s; }
+.delay-500  { animation-delay: 0.56s; }
+.delay-600  { animation-delay: 0.70s; }
+
+/* Horizontal sage rule */
+.sage-rule {
+  border: none;
+  border-top: 1px solid oklch(0.58 0.090 155 / 0.25);
 }
 
-/* Staggered animation delays for cascading reveals */
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
+/* Inline accent ink — for highlighted key terms */
+.ink-accent {
+  color: oklch(0.58 0.135 55);
+  font-style: italic;
+}
+
+/* Drop cap for editorial paragraphs */
+.drop-cap::first-letter {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  line-height: 0.8;
+  padding-right: 0.12em;
+  padding-top: 0.08em;
+  color: oklch(0.46 0.095 155);
+  font-weight: 600;
+}
+
+/* Hero noise grain overlay — gives paper texture feel */
+.hero-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Topic tag pill */
+.topic-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: oklch(0.46 0.095 155);
+  border: 1px solid oklch(0.58 0.090 155 / 0.35);
+  border-radius: 2px;
+  padding: 0.2em 0.65em;
+}
