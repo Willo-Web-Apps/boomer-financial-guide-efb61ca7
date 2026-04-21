@@ -280,9 +280,9 @@ import Base from '../layouts/Base.astro';
       </div>
 
       <!-- Featured article — wide format -->
-      <article class="grid md:grid-cols-[1fr_1px_1fr] gap-0 mb-14 pb-14 animate-slide-up" style="border-bottom: 1px solid oklch(0.58 0.090 155 / 0.20);">
+      <article class="grid md:grid-cols-2 gap-12 md:gap-16 mb-14 pb-14 animate-slide-up" style="border-bottom: 1px solid oklch(0.58 0.090 155 / 0.20);">
         <!-- Left: main feature -->
-        <div class="pr-0 md:pr-10">
+        <div class="pr-0 md:pr-6">
           <span class="topic-tag mb-5 inline-block">Social Security</span>
           <h3 class="font-display font-light leading-tight mb-4" style="font-size: clamp(1.5rem, 3.5vw, 2.1rem); color: oklch(0.24 0.022 78);">
             The $100,000 Social Security decision most people get wrong
@@ -297,7 +297,8 @@ import Base from '../layouts/Base.astro';
         </div>
 
         <!-- Right: two smaller stories -->
-        <div class="mt-8 md:mt-0 space-y-8">
+        <div class="mt-8 md:mt-0 md:pl-6 space-y-8" style="border-left: 1px solid oklch(0.58 0.090 155 / 0.20);">
+
           <div class="pb-8" style="border-bottom: 1px solid oklch(0.58 0.090 155 / 0.18);">
             <span class="topic-tag mb-3 inline-block">Medicare</span>
             <h4 class="font-display font-medium leading-snug mb-2" style="font-size: 1.1rem; color: oklch(0.28 0.022 78);">Medicare Part B premiums jumped again. Here's what it means for you</h4>
